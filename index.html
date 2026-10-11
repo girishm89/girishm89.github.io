@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gireesha Mukunda | Progress OpenEdge & React Engineer</title>
+  <meta name="description" content="Gireesha Mukunda, Engineering Manager with 15+ years building, integrating and modernising enterprise applications on Progress OpenEdge, with React frontends." />
+  <meta property="og:title" content="Gireesha Mukunda | Progress OpenEdge & React Engineer" />
+  <meta property="og:description" content="15+ years building, integrating and modernising enterprise applications on Progress OpenEdge." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#1C2B4D" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%230A1328'/><text x='50' y='64' font-size='42' font-family='Arial' font-weight='800' fill='%23F5B841' text-anchor='middle'>GM</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=DM+Sans:opsz,wght@9..40,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script>
+    // Hide only the Tailwind CDN "production" notice; all other warnings still show.
+    (function () { var w = console.warn; console.warn = function () { if (typeof arguments[0] === "string" && arguments[0].indexOf("cdn.tailwindcss.com should not be used in production") !== -1) return; return w.apply(console, arguments); }; })();
+  </script>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            night: '#1C2B4D',
+            deep: '#233560',
+            panel: '#2B4070',
+            ink: '#E8EDF7',
+            muted: '#AEBBD4',
+            amber: '#F5B841',
+            sky: '#7CC4FF'
+          },
+          fontFamily: {
+            display: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+            sans: ['"DM Sans"', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'Menlo', 'Consolas', 'monospace']
+          },
+          maxWidth: { page: '76rem' }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; background: #1C2B4D; }
+    body { background:
+      radial-gradient(60rem 40rem at 85% -10%, rgba(245,184,65,.13), transparent 60%),
+      radial-gradient(50rem 40rem at -10% 20%, rgba(124,196,255,.10), transparent 60%),
+      #1C2B4D; }
+    ::selection { background: #F5B841; color: #0A1328; }
+    :focus-visible { outline: 2px solid #F5B841; outline-offset: 3px; border-radius: 6px; }
+
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(ellipse at 60% 40%, black 30%, transparent 75%);
+      -webkit-mask-image: radial-gradient(ellipse at 60% 40%, black 30%, transparent 75%);
+    }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.015)); border: 1px solid rgba(255,255,255,.08); }
+    .card-hover { transition: border-color .25s ease, transform .25s ease, background .25s ease; }
+    .card-hover:hover { border-color: rgba(245,184,65,.45); transform: translateY(-3px); }
+    .gold-text { background: linear-gradient(100deg, #FFD98A, #F5B841 45%, #E89A2C); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent); }
+
+    /* Reveal on scroll */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+
+    /* Integration map */
+    .map-line { stroke: rgba(124,196,255,.28); stroke-width: 1.5; stroke-dasharray: 4 6; animation: dash 18s linear infinite; }
+    @keyframes dash { to { stroke-dashoffset: -400; } }
+    .core-glow { animation: glow 3.2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+    @keyframes glow { 50% { opacity: .35; transform: scale(1.08); } }
+
+    .nav-link { position: relative; }
+    .nav-link::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; border-radius: 2px; background: #F5B841; transform: scaleX(0); transition: transform .25s ease; }
+    .nav-link[aria-current="true"] { color: #E8EDF7; }
+    .nav-link[aria-current="true"]::after { transform: scaleX(1); }
+
+    input, textarea { color-scheme: dark; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+      .pulse { display: none; }
+    }
+  </style>
+</head>
+
+<body class="text-ink font-sans antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 bg-amber text-night px-4 py-2 rounded-lg font-semibold">Skip to content</a>
+
+  <!-- ============ Header ============ -->
+  <header class="fixed inset-x-0 top-0 z-40">
+    <div id="navShell" class="transition-colors duration-300 border-b border-transparent">
+      <nav class="max-w-page mx-auto px-5 sm:px-8 h-[72px] flex items-center justify-between" aria-label="Main">
+        <a href="#hero" class="flex items-center gap-3 group">
+          <span class="grid place-items-center h-10 w-10 rounded-xl bg-amber text-night font-display font-extrabold text-[15px]">GM</span>
+          <span class="font-display font-semibold text-[17px] tracking-tight hidden sm:block">Gireesha Mukunda</span>
+        </a>
+
+        <ul class="hidden lg:flex items-center gap-8 text-[15px] text-muted">
+          <li><a class="nav-link hover:text-ink transition-colors" href="#about">About</a></li>
+          <li><a class="nav-link hover:text-ink transition-colors" href="#experience">Experience</a></li>
+          <li><a class="nav-link hover:text-ink transition-colors" href="#skills">Skills</a></li>
+          <li><a class="nav-link hover:text-ink transition-colors" href="#projects">Projects</a></li>
+          <li><a class="nav-link hover:text-ink transition-colors" href="#education">Education</a></li>
+        </ul>
+        <a href="#contact" class="hidden lg:inline-flex items-center gap-2 rounded-full bg-amber text-night px-5 py-2.5 text-[15px] font-semibold hover:bg-[#FFC95E] transition-colors">Contact me</a>
+
+        <button id="menuBtn" class="lg:hidden p-2 -mr-2 rounded-lg text-ink" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg id="iconOpen" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+          <svg id="iconClose" class="hidden" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </nav>
+
+      <div id="mobileMenu" class="lg:hidden hidden bg-night/95 backdrop-blur-xl border-t border-white/10">
+        <ul class="px-5 py-4 font-display text-2xl font-semibold space-y-1">
+          <li><a class="block py-2.5" href="#about">About</a></li>
+          <li><a class="block py-2.5" href="#experience">Experience</a></li>
+          <li><a class="block py-2.5" href="#skills">Skills</a></li>
+          <li><a class="block py-2.5" href="#projects">Projects</a></li>
+          <li><a class="block py-2.5" href="#education">Education</a></li>
+          <li class="pt-3"><a class="inline-flex rounded-full bg-amber text-night px-6 py-3 text-base" href="#contact">Contact me</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ Hero ============ -->
+    <section id="hero" class="relative overflow-hidden pt-32 sm:pt-40 pb-20 sm:pb-28">
+      <div class="grid-bg absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+
+      <div class="relative max-w-page mx-auto px-5 sm:px-8 grid lg:grid-cols-[1.1fr_1fr] gap-14 items-center">
+        <div>
+          <p class="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[.04] px-4 py-1.5 text-sm text-muted">
+            <span class="h-2 w-2 rounded-full bg-amber"></span>
+            Engineering Manager at Cognizant, Walsall UK
+          </p>
+
+          <h1 class="mt-7 font-display font-extrabold tracking-tight leading-[0.95] text-[3.1rem] sm:text-[4.6rem] xl:text-[5.4rem]">
+            Gireesha<br /><span class="gold-text">Mukunda</span>
+          </h1>
+
+          <p class="mt-7 text-xl sm:text-[1.4rem] leading-snug text-ink/90 max-w-[30ch] font-display font-medium">
+            Progress OpenEdge and React engineer who connects enterprise systems to the modern web.
+          </p>
+          <p class="mt-4 text-muted text-[17px] leading-relaxed max-w-[52ch]">
+            15 years building, integrating and modernising business applications in Progress 4GL / ABL, from mature ADM2 and WebSpeed estates to new PASOE builds.
+          </p>
+
+          <div class="mt-9 flex flex-wrap gap-3">
+            <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-amber text-night px-6 py-3.5 font-semibold hover:bg-[#FFC95E] transition-colors">
+              Start a conversation
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#projects" class="inline-flex items-center rounded-full border border-white/15 px-6 py-3.5 font-semibold hover:border-amber/60 hover:text-amber transition-colors">View my work</a>
+          </div>
+
+          <dl class="mt-12 grid grid-cols-3 gap-4 max-w-lg">
+            <div class="border-l-2 border-amber pl-4"><dt class="sr-only">Experience</dt><dd class="font-display text-3xl sm:text-4xl font-bold">15+</dd><p class="text-sm text-muted mt-1">years on OpenEdge</p></div>
+            <div class="border-l-2 border-white/15 pl-4"><dt class="sr-only">Stack</dt><dd class="font-display text-3xl sm:text-4xl font-bold">4GL+</dd><p class="text-sm text-muted mt-1">React full stack</p></div>
+            <div class="border-l-2 border-white/15 pl-4"><dt class="sr-only">Certifications</dt><dd class="font-display text-3xl sm:text-4xl font-bold">3</dd><p class="text-sm text-muted mt-1">certifications</p></div>
+          </dl>
+        </div>
+
+        <!-- Signature: integration map -->
+        <figure class="relative mx-auto w-full max-w-[540px]" aria-label="Diagram: a Progress OpenEdge core connected to React, Single Sign-On, payment gateways, KYC, REST and SOAP services, and legacy ADM2 and WebSpeed systems">
+          <svg viewBox="0 0 520 460" class="w-full h-auto" role="img" aria-hidden="true">
+            <defs>
+              <radialGradient id="coreGrad" cx="50%" cy="40%" r="70%">
+                <stop offset="0%" stop-color="#FFD98A"/><stop offset="100%" stop-color="#E89A2C"/>
+              </radialGradient>
+              <linearGradient id="nodeGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#304A7E"/><stop offset="100%" stop-color="#284170"/>
+              </linearGradient>
+            </defs>
+
+            <!-- paths: centre to each satellite -->
+            <path id="p1" class="map-line" d="M260 230 L260 62" fill="none"/>
+            <path id="p2" class="map-line" d="M260 230 L432 128" fill="none"/>
+            <path id="p3" class="map-line" d="M260 230 L432 332" fill="none"/>
+            <path id="p4" class="map-line" d="M260 230 L260 398" fill="none"/>
+            <path id="p5" class="map-line" d="M260 230 L88 332" fill="none"/>
+            <path id="p6" class="map-line" d="M260 230 L88 128" fill="none"/>
+
+            <!-- moving data pulses -->
+            <g class="pulse">
+              <circle r="4" fill="#F5B841"><animateMotion dur="2.6s" repeatCount="indefinite"><mpath href="#p1"/></animateMotion></circle>
+              <circle r="4" fill="#7CC4FF"><animateMotion dur="3.1s" begin=".4s" repeatCount="indefinite"><mpath href="#p2"/></animateMotion></circle>
+              <circle r="4" fill="#F5B841"><animateMotion dur="2.8s" begin="1s" repeatCount="indefinite"><mpath href="#p3"/></animateMotion></circle>
+              <circle r="4" fill="#7CC4FF"><animateMotion dur="3.4s" begin=".2s" repeatCount="indefinite"><mpath href="#p4"/></animateMotion></circle>
+              <circle r="4" fill="#F5B841"><animateMotion dur="3s" begin=".7s" repeatCount="indefinite"><mpath href="#p5"/></animateMotion></circle>
+              <circle r="4" fill="#7CC4FF"><animateMotion dur="2.7s" begin="1.3s" repeatCount="indefinite"><mpath href="#p6"/></animateMotion></circle>
+            </g>
+
+            <!-- satellites -->
+            <g font-family="DM Sans, sans-serif" font-size="14" font-weight="600" fill="#E8EDF7" text-anchor="middle">
+              <g><rect x="195" y="38" width="130" height="48" rx="14" fill="url(#nodeGrad)" stroke="rgba(124,196,255,.35)"/><text x="260" y="67">React UI</text></g>
+              <g><rect x="367" y="104" width="130" height="48" rx="14" fill="url(#nodeGrad)" stroke="rgba(124,196,255,.35)"/><text x="432" y="133">Single Sign-On</text></g>
+              <g><rect x="357" y="308" width="150" height="48" rx="14" fill="url(#nodeGrad)" stroke="rgba(124,196,255,.35)"/><text x="432" y="337">Payment gateway</text></g>
+              <g><rect x="195" y="374" width="130" height="48" rx="14" fill="url(#nodeGrad)" stroke="rgba(124,196,255,.35)"/><text x="260" y="403">KYC checks</text></g>
+              <g><rect x="18" y="308" width="140" height="48" rx="14" fill="url(#nodeGrad)" stroke="rgba(124,196,255,.35)"/><text x="88" y="337">REST · SOAP</text></g>
+              <g><rect x="13" y="104" width="150" height="48" rx="14" fill="url(#nodeGrad)" stroke="rgba(124,196,255,.35)"/><text x="88" y="133">ADM2 · WebSpeed</text></g>
+            </g>
+
+            <!-- core -->
+            <circle class="core-glow" cx="260" cy="230" r="78" fill="rgba(245,184,65,.18)"/>
+            <circle cx="260" cy="230" r="62" fill="url(#coreGrad)"/>
+            <text x="260" y="224" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="19" fill="#0A1328">OpenEdge</text>
+            <text x="260" y="246" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="500" font-size="12" fill="#0A1328">ABL · PASOE</text>
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <div class="divider max-w-page mx-auto"></div>
+
+    <!-- ============ About ============ -->
+    <section id="about" class="py-24 sm:py-32">
+      <div class="max-w-page mx-auto px-5 sm:px-8 grid lg:grid-cols-[22rem_1fr] gap-12 lg:gap-20 items-start">
+        <div class="reveal">
+          <!-- Add a photo named profile.jpg next to index.html to show it here; initials show until then -->
+          <div class="relative aspect-[4/5] w-full max-w-[22rem] rounded-3xl overflow-hidden card">
+            <img src="profile.jpg" alt="Portrait of Gireesha Mukunda" class="absolute inset-0 h-full w-full object-cover" onerror="this.remove()" />
+            <div class="absolute inset-0 -z-0 grid place-items-center bg-[radial-gradient(circle_at_30%_20%,rgba(245,184,65,.25),transparent_60%)]">
+              <span class="font-display font-extrabold text-[7rem] text-white/10 select-none">GM</span>
+            </div>
+          </div>
+          <dl class="mt-6 card rounded-2xl p-5 space-y-3 text-[15px]">
+            <div class="flex justify-between gap-4"><dt class="text-muted">Location</dt><dd class="font-medium text-right">Walsall, UK</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-muted">Visa</dt><dd class="font-medium text-right">UK Global Business Mobility</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-muted">Languages</dt><dd class="font-medium text-right">English, Kannada, Hindi</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-muted">Methods</dt><dd class="font-medium text-right">Agile (Scrum), Waterfall</dd></div>
+          </dl>
+        </div>
+
+        <div class="reveal">
+          <h2 class="font-display font-bold tracking-tight text-4xl sm:text-5xl leading-[1.05] max-w-[18ch]">Keeping the strength of OpenEdge, giving users a modern experience.</h2>
+          <div class="mt-8 space-y-5 text-[17px] sm:text-lg leading-[1.75] text-muted max-w-[62ch]">
+            <p>I'm a Progress 4GL full-stack developer and engineering manager with over 15 years across the full lifecycle of OpenEdge applications, from maintaining mature ADM2 and WebSpeed systems to setting up new environments from scratch with PASOE and the Progress database.</p>
+            <p>My specialism is connecting OpenEdge to the outside world. I've implemented Single Sign-On and integrated systems with payment gateways, KYC verification services and third-party applications over SOAP, REST and WebHandlers, always with security, reliability and maintainability in mind.</p>
+            <p>On the frontend I build with React, both full-stack apps on a Progress backend and standalone static web apps. I use VS Code and AI-assisted development with Claude to move faster, raise code quality and make sense of legacy code.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Experience ============ -->
+    <section id="experience" class="py-24 sm:py-32 bg-deep/60 border-y border-white/5">
+      <div class="max-w-page mx-auto px-5 sm:px-8">
+        <div class="reveal flex flex-wrap items-end justify-between gap-6 mb-14">
+          <h2 class="font-display font-bold tracking-tight text-4xl sm:text-5xl">Experience</h2>
+          <p class="text-muted max-w-md">15 years at Cognizant delivering, integrating and modernising enterprise OpenEdge applications.</p>
+        </div>
+
+        <article class="reveal card rounded-3xl p-6 sm:p-10">
+          <header class="flex flex-wrap items-center justify-between gap-4 pb-8 border-b border-white/10">
+            <div class="flex items-center gap-4">
+              <span class="grid place-items-center h-14 w-14 rounded-2xl bg-sky/10 text-sky">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg>
+              </span>
+              <div>
+                <h3 class="font-display text-2xl font-bold">Engineering Manager</h3>
+                <p class="text-muted">Cognizant</p>
+              </div>
+            </div>
+            <span class="rounded-full bg-amber/10 text-amber px-4 py-1.5 text-sm font-semibold">Apr 2011 – Present</span>
+          </header>
+
+          <div class="grid md:grid-cols-2 gap-x-12 gap-y-9 pt-9">
+            <div class="flex gap-4">
+              <span class="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-amber shadow-[0_0_0_5px_rgba(245,184,65,.15)]"></span>
+              <div><h4 class="font-display text-lg font-semibold">Build and modernise</h4><p class="mt-1.5 text-muted leading-relaxed">Design, develop, maintain and modernise enterprise applications in Progress 4GL / ABL, across mature ADM2 / WebSpeed systems and new builds. Set up OpenEdge environments from scratch, including PASOE and the Progress database.</p></div>
+            </div>
+            <div class="flex gap-4">
+              <span class="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-amber shadow-[0_0_0_5px_rgba(245,184,65,.15)]"></span>
+              <div><h4 class="font-display text-lg font-semibold">Integrate securely</h4><p class="mt-1.5 text-muted leading-relaxed">Implemented Single Sign-On for OpenEdge applications. Integrated payment gateways, KYC verification services and third-party applications using SOAP, REST and WebHandlers.</p></div>
+            </div>
+            <div class="flex gap-4">
+              <span class="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-amber shadow-[0_0_0_5px_rgba(245,184,65,.15)]"></span>
+              <div><h4 class="font-display text-lg font-semibold">Deliver modern frontends</h4><p class="mt-1.5 text-muted leading-relaxed">Built full-stack applications with a Progress 4GL backend and React frontend, plus standalone React static web apps. Use VS Code and AI tools to speed up delivery and analyse legacy code.</p></div>
+            </div>
+            <div class="flex gap-4">
+              <span class="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-amber shadow-[0_0_0_5px_rgba(245,184,65,.15)]"></span>
+              <div><h4 class="font-display text-lg font-semibold">Performance and quality</h4><p class="mt-1.5 text-muted leading-relaxed">Tune performance through query optimisation, indexing and ABL code improvements. Debug, unit test and lead code reviews.</p></div>
+            </div>
+            <div class="flex gap-4 md:col-span-2">
+              <span class="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-amber shadow-[0_0_0_5px_rgba(245,184,65,.15)]"></span>
+              <div><h4 class="font-display text-lg font-semibold">Lead and mentor</h4><p class="mt-1.5 text-muted leading-relaxed max-w-[75ch]">Work with business analysts and stakeholders to define requirements, keep technical documentation current, and train and mentor junior developers on Progress best practice.</p></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ Skills (bento) ============ -->
+    <section id="skills" class="py-24 sm:py-32">
+      <div class="max-w-page mx-auto px-5 sm:px-8">
+        <h2 class="reveal font-display font-bold tracking-tight text-4xl sm:text-5xl mb-14">Skills</h2>
+
+        <div class="grid md:grid-cols-6 gap-5">
+          <div class="reveal card card-hover rounded-3xl p-7 md:col-span-4 relative overflow-hidden">
+            <div class="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-amber/10 blur-2xl" aria-hidden="true"></div>
+            <div class="relative">
+              <span class="grid place-items-center h-12 w-12 rounded-xl bg-amber text-night mb-5">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+              </span>
+              <h3 class="font-display text-2xl font-bold">Progress OpenEdge platform</h3>
+              <p class="mt-2 text-muted max-w-[52ch]">My core expertise, from the database up to the application server.</p>
+              <div class="mt-6 flex flex-wrap gap-2" data-tags="Progress 4GL / ABL,OpenEdge Database,PASOE,WebSpeed,WebHandlers,ADM2,ProDataSets,.NET Integration" data-style="gold"></div>
+            </div>
+          </div>
+
+          <div class="reveal card card-hover rounded-3xl p-7 md:col-span-2">
+            <span class="grid place-items-center h-12 w-12 rounded-xl bg-sky/10 text-sky mb-5">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg>
+            </span>
+            <h3 class="font-display text-xl font-bold">Frontend</h3>
+            <div class="mt-5 flex flex-wrap gap-2" data-tags="React,JavaScript,JSON,Static web apps"></div>
+          </div>
+
+          <div class="reveal card card-hover rounded-3xl p-7 md:col-span-2">
+            <span class="grid place-items-center h-12 w-12 rounded-xl bg-sky/10 text-sky mb-5">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>
+            </span>
+            <h3 class="font-display text-xl font-bold">Integrations</h3>
+            <div class="mt-5 flex flex-wrap gap-2" data-tags="REST,SOAP,XML,Single Sign-On,Payment gateways,KYC services"></div>
+          </div>
+
+          <div class="reveal card card-hover rounded-3xl p-7 md:col-span-2">
+            <span class="grid place-items-center h-12 w-12 rounded-xl bg-sky/10 text-sky mb-5">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg>
+            </span>
+            <h3 class="font-display text-xl font-bold">Tools</h3>
+            <div class="mt-5 flex flex-wrap gap-2" data-tags="VS Code,Progress Developer Studio,AppBuilder,Procedure Editor,Git,Postman,SOAP UI"></div>
+          </div>
+
+          <div class="reveal card card-hover rounded-3xl p-7 md:col-span-2">
+            <span class="grid place-items-center h-12 w-12 rounded-xl bg-sky/10 text-sky mb-5">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 17l.8 2.2L22 20l-2.2.8L19 23l-.8-2.2L16 20l2.2-.8z"/></svg>
+            </span>
+            <h3 class="font-display text-xl font-bold">AI-assisted development</h3>
+            <div class="mt-5 flex flex-wrap gap-2" data-tags="Claude,Legacy code analysis,Code quality"></div>
+          </div>
+
+          <div class="reveal card card-hover rounded-3xl p-7 md:col-span-6 flex flex-col md:flex-row md:items-center gap-5 md:gap-10">
+            <h3 class="font-display text-xl font-bold shrink-0">Engineering practice</h3>
+            <div class="flex flex-wrap gap-2" data-tags="Performance tuning,Query optimisation,Indexing,Code reviews,Unit testing,Technical documentation,Mentoring,Agile (Scrum),Waterfall,Windows"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Projects ============ -->
+    <section id="projects" class="py-24 sm:py-32 bg-deep/60 border-y border-white/5">
+      <div class="max-w-page mx-auto px-5 sm:px-8">
+        <div class="reveal flex flex-wrap items-end justify-between gap-6 mb-14">
+          <h2 class="font-display font-bold tracking-tight text-4xl sm:text-5xl">Selected work</h2>
+          <p class="text-muted max-w-md">Highlights from enterprise engagements. Client names are kept confidential.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-5">
+          <article class="reveal card card-hover rounded-3xl p-7 sm:p-9">
+            <div class="flex items-center justify-between mb-8">
+              <span class="grid place-items-center h-12 w-12 rounded-xl bg-amber/15 text-amber">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg>
+              </span>
+              <span class="font-mono text-xs text-muted">Integration</span>
+            </div>
+            <h3 class="font-display text-2xl font-bold">Payment gateway and KYC integration</h3>
+            <p class="mt-3 text-muted leading-relaxed">Connected OpenEdge business applications to external payment gateways and identity-verification services, so customers can be verified and charged in one secure, auditable flow.</p>
+            <ul class="mt-6 flex flex-wrap gap-2" data-chips="WebHandlers,REST,SOAP,PASOE"></ul>
+          </article>
+
+          <article class="reveal card card-hover rounded-3xl p-7 sm:p-9">
+            <div class="flex items-center justify-between mb-8">
+              <span class="grid place-items-center h-12 w-12 rounded-xl bg-amber/15 text-amber">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+              </span>
+              <span class="font-mono text-xs text-muted">Security</span>
+            </div>
+            <h3 class="font-display text-2xl font-bold">Single Sign-On for OpenEdge</h3>
+            <p class="mt-3 text-muted leading-relaxed">Implemented SSO so users sign in once with their organisation's identity, replacing separate application logins and tightening access control.</p>
+            <ul class="mt-6 flex flex-wrap gap-2" data-chips="SSO,Progress 4GL / ABL,Authentication"></ul>
+          </article>
+
+          <article class="reveal card card-hover rounded-3xl p-7 sm:p-9">
+            <div class="flex items-center justify-between mb-8">
+              <span class="grid place-items-center h-12 w-12 rounded-xl bg-amber/15 text-amber">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+              </span>
+              <span class="font-mono text-xs text-muted">Full stack</span>
+            </div>
+            <h3 class="font-display text-2xl font-bold">React frontends on a Progress backend</h3>
+            <p class="mt-3 text-muted leading-relaxed">Built applications pairing a Progress 4GL service layer with React interfaces, plus standalone React static web apps, giving users a modern experience without replacing proven business logic.</p>
+            <ul class="mt-6 flex flex-wrap gap-2" data-chips="React,REST / JSON,ProDataSets"></ul>
+          </article>
+
+          <article class="reveal card card-hover rounded-3xl p-7 sm:p-9">
+            <div class="flex items-center justify-between mb-8">
+              <span class="grid place-items-center h-12 w-12 rounded-xl bg-amber/15 text-amber">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="7" rx="2"/><path d="M7 6.5h.01M7 17.5h.01"/></svg>
+              </span>
+              <span class="font-mono text-xs text-muted">Infrastructure</span>
+            </div>
+            <h3 class="font-display text-2xl font-bold">New OpenEdge environments from scratch</h3>
+            <p class="mt-3 text-muted leading-relaxed">Stood up PASOE application servers and Progress databases for greenfield builds, and improved existing estates through query optimisation and indexing.</p>
+            <ul class="mt-6 flex flex-wrap gap-2" data-chips="PASOE,OpenEdge Database,Performance"></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Education & Certifications ============ -->
+    <section id="education" class="py-24 sm:py-32">
+      <div class="max-w-page mx-auto px-5 sm:px-8">
+        <h2 class="reveal font-display font-bold tracking-tight text-4xl sm:text-5xl mb-14">Education and certifications</h2>
+        <div class="grid lg:grid-cols-[1fr_1.4fr] gap-5">
+          <div class="reveal card rounded-3xl p-7 sm:p-9 relative overflow-hidden">
+            <div class="absolute -left-10 -bottom-10 h-48 w-48 rounded-full bg-sky/10 blur-2xl" aria-hidden="true"></div>
+            <span class="relative grid place-items-center h-12 w-12 rounded-xl bg-sky/10 text-sky mb-6">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>
+            </span>
+            <p class="relative font-mono text-sm text-amber">2010</p>
+            <h3 class="relative mt-1 font-display text-2xl font-bold">B.Tech / B.E.</h3>
+            <p class="relative mt-2 text-muted">Visveswaraiah Technological University (VTU), India</p>
+          </div>
+
+          <ul class="grid sm:grid-cols-3 gap-5">
+            <li class="reveal card card-hover rounded-3xl p-7 flex flex-col">
+              <span class="grid place-items-center h-12 w-12 rounded-xl bg-amber text-night mb-6">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></svg>
+              </span>
+              <h3 class="font-display text-lg font-bold leading-snug">Certified Claude Architect</h3>
+              <p class="mt-auto pt-3 text-muted text-sm">Foundation · Anthropic</p>
+            </li>
+            <li class="reveal card card-hover rounded-3xl p-7 flex flex-col">
+              <span class="grid place-items-center h-12 w-12 rounded-xl bg-sky/15 text-sky mb-6">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 1 0-1.4-8.8A6 6 0 0 0 4.5 12 3.5 3.5 0 0 0 6 19z"/></svg>
+              </span>
+              <h3 class="font-display text-lg font-bold leading-snug">Azure Fundamentals</h3>
+              <p class="mt-auto pt-3 text-muted text-sm">AZ-900 · Microsoft</p>
+            </li>
+            <li class="reveal card card-hover rounded-3xl p-7 flex flex-col">
+              <span class="grid place-items-center h-12 w-12 rounded-xl bg-sky/15 text-sky mb-6">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+              </span>
+              <h3 class="font-display text-lg font-bold leading-snug">Certified System Architect</h3>
+              <p class="mt-auto pt-3 text-muted text-sm">Pega</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Contact ============ -->
+    <section id="contact" class="pb-24 sm:pb-32">
+      <div class="max-w-page mx-auto px-5 sm:px-8">
+        <div class="reveal relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-panel via-deep to-night p-7 sm:p-12 lg:p-16">
+          <div class="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-amber/20 blur-3xl" aria-hidden="true"></div>
+          <div class="absolute -left-24 -bottom-24 h-72 w-72 rounded-full bg-sky/10 blur-3xl" aria-hidden="true"></div>
+
+          <div class="relative grid lg:grid-cols-[1fr_1.15fr] gap-12 lg:gap-16">
+            <div>
+              <h2 class="font-display font-bold tracking-tight text-4xl sm:text-5xl leading-[1.05]">Let's talk about your OpenEdge project.</h2>
+              <p class="mt-5 text-muted text-lg leading-relaxed max-w-[44ch]">Whether it's a role, an integration or a modernisation plan, send a message and I'll reply by email.</p>
+              <ul class="mt-8 space-y-3 text-[15px]">
+                <li class="flex items-center gap-3"><span class="grid place-items-center h-8 w-8 rounded-lg bg-white/5 text-amber"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span>Based in the West Midlands, UK</li>
+                <li class="flex items-center gap-3"><span class="grid place-items-center h-8 w-8 rounded-lg bg-white/5 text-amber"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span>Your message goes straight to my inbox</li>
+              </ul>
+            </div>
+
+            <form id="contactForm" class="space-y-5" novalidate>
+              <!--
+                ======= WEB3FORMS SETUP =======
+                1. Get a free access key at https://web3forms.com (enter your email; the key arrives in your inbox).
+                2. Paste it below in place of YOUR_WEB3FORMS_ACCESS_KEY.
+                The key is safe to publish: it only lets people send messages TO you. Your email stays hidden.
+              -->
+              <input type="hidden" name="access_key" value="5c2e5854-64c8-42df-a570-6227cd420a7b" />
+              <input type="hidden" name="subject" value="New message from your resume website" />
+              <input type="hidden" name="from_name" value="Resume website" />
+              <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="name" class="block text-sm font-medium mb-2">Your name</label>
+                  <input id="name" name="name" type="text" required autocomplete="name"
+                    class="w-full rounded-xl border border-white/10 bg-night/60 px-4 py-3 text-ink placeholder-muted/60 outline-none focus:border-amber focus:ring-4 focus:ring-amber/15 transition" />
+                </div>
+                <div>
+                  <label for="email" class="block text-sm font-medium mb-2">Your email</label>
+                  <input id="email" name="email" type="email" required autocomplete="email"
+                    class="w-full rounded-xl border border-white/10 bg-night/60 px-4 py-3 text-ink outline-none focus:border-amber focus:ring-4 focus:ring-amber/15 transition" />
+                </div>
+              </div>
+              <div>
+                <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                <textarea id="message" name="message" rows="6" required
+                  class="w-full rounded-xl border border-white/10 bg-night/60 px-4 py-3 text-ink outline-none focus:border-amber focus:ring-4 focus:ring-amber/15 transition resize-y"></textarea>
+              </div>
+              <div class="flex flex-wrap items-center gap-4">
+                <button id="submitBtn" type="submit"
+                  class="inline-flex items-center gap-2 rounded-full bg-amber text-night px-7 py-3.5 font-semibold hover:bg-[#FFC95E] transition-colors disabled:opacity-60 disabled:cursor-not-allowed">
+                  <span id="submitLabel">Send message</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                </button>
+                <p id="formStatus" class="text-[15px]" role="status" aria-live="polite"></p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/5">
+    <div class="max-w-page mx-auto px-5 sm:px-8 py-8 flex flex-wrap items-center justify-between gap-4 text-sm text-muted">
+      <p>© <span id="year"></span> Gireesha Mukunda</p>
+      <a href="#hero" class="inline-flex items-center gap-2 hover:text-amber transition-colors">Back to top
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // ---- Tags & chips ----
+    document.querySelectorAll('[data-tags]').forEach(el => {
+      const gold = el.dataset.style === 'gold';
+      el.innerHTML = el.dataset.tags.split(',').map(t =>
+        `<span class="rounded-full px-3.5 py-1.5 text-[14px] ${gold ? 'bg-amber/10 text-amber border border-amber/25' : 'bg-white/[.05] text-ink/90 border border-white/10'}">${t.trim()}</span>`).join('');
+    });
+    document.querySelectorAll('[data-chips]').forEach(el => {
+      el.innerHTML = el.dataset.chips.split(',').map(t =>
+        `<li class="rounded-full bg-sky/10 text-sky border border-sky/20 px-3 py-1 text-[13px] font-medium">${t.trim()}</li>`).join('');
+    });
+
+    // ---- Header background on scroll ----
+    const navShell = document.getElementById('navShell');
+    const onScroll = () => {
+      const scrolled = window.scrollY > 20;
+      navShell.classList.toggle('bg-night/80', scrolled);
+      navShell.classList.toggle('backdrop-blur-xl', scrolled);
+      navShell.classList.toggle('border-white/10', scrolled);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+    // ---- Mobile menu ----
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const iconOpen = document.getElementById('iconOpen');
+    const iconClose = document.getElementById('iconClose');
+    function setMenu(open) {
+      mobileMenu.classList.toggle('hidden', !open);
+      iconOpen.classList.toggle('hidden', open);
+      iconClose.classList.toggle('hidden', !open);
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      if (open) { navShell.classList.add('bg-night/80', 'backdrop-blur-xl'); } else { onScroll(); }
+    }
+    menuBtn.addEventListener('click', () => setMenu(mobileMenu.classList.contains('hidden')));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    window.addEventListener('resize', () => { if (window.innerWidth >= 1024) setMenu(false); });
+
+    // ---- Active nav link ----
+    const links = [...document.querySelectorAll('.nav-link')];
+    const navObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) links.forEach(l => l.setAttribute('aria-current', l.getAttribute('href') === '#' + e.target.id ? 'true' : 'false'));
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    ['about','experience','skills','projects','education','contact'].forEach(id => { const s = document.getElementById(id); if (s) navObserver.observe(s); });
+
+    // ---- Reveal on scroll ----
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealObserver.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+      el.style.transitionDelay = (i % 3) * 80 + 'ms';
+      revealObserver.observe(el);
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ---- Contact form (Web3Forms) ----
+    const form = document.getElementById('contactForm');
+    const statusEl = document.getElementById('formStatus');
+    const submitBtn = document.getElementById('submitBtn');
+    const submitLabel = document.getElementById('submitLabel');
+    function showStatus(text, ok) {
+      statusEl.textContent = text;
+      statusEl.className = 'text-[15px] ' + (ok ? 'text-[#5FD4A0]' : 'text-[#FF8A80]');
+    }
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        showStatus('Add your name, a valid email and a message, then send again.', false);
+        form.reportValidity();
+        return;
+      }
+      if (form.access_key.value === 'YOUR_WEB3FORMS_ACCESS_KEY') {
+        showStatus('The form is not set up yet: add a Web3Forms access key in index.html.', false);
+        return;
+      }
+      submitBtn.disabled = true;
+      submitLabel.textContent = 'Sending…';
+      statusEl.textContent = '';
+      try {
+        const data = Object.fromEntries(new FormData(form));
+        data.botcheck = form.botcheck.checked;
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const json = await res.json();
+        if (res.ok && json.success) {
+          form.reset();
+          showStatus('Message sent. I\'ll reply to the email you gave.', true);
+        } else {
+          showStatus(json.message || 'The message didn\'t send. Check your details and try again.', false);
+        }
+      } catch (err) {
+        showStatus('The message didn\'t send because the connection failed. Check your internet and try again.', false);
+      } finally {
+        submitBtn.disabled = false;
+        submitLabel.textContent = 'Send message';
+      }
+    });
+  </script>
+</body>
+</html>
